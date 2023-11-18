@@ -1,0 +1,218 @@
+:root {
+  --highlight: #03e9f4;
+  --maincolor: #ff0303;
+  --seccolor: #000000;
+  --thirdcolor: #4e4feb;
+  --text: #faf6f0;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background: var(--seccolor);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--highlight);
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+body{
+  background-color: var(--seccolor);
+  height: 1200px;
+}
+*::selection{
+  color: var(--seccolor);
+  background-color: var(--highlight);
+}
+*{
+  caret-color: var(--highlight);
+}
+.login-box {
+  position: absolute;
+  background-color: transparent;
+  width: 400px;
+  height: 300px;
+  padding: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+form {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login {
+  color: var(--text);
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+form div {
+  position: relative;
+  width: 100%;
+  margin: 20px;
+}
+form input,
+form input:focus {
+  background-color: transparent;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+    border-bottom:2px solid var(--highlight);
+    width: 100%;
+    color: var(--text);
+}
+.label{
+  position: absolute;
+  text-transform:uppercase ;
+  top: -5px;
+  left: 0;
+  color: var(--text);
+  transition: .5s;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -ms-transition: .5s;
+  -o-transition: .5s;
+}
+form input:focus + .label,
+form input:valid + .label
+{
+ transform: translate(0px,-20px);
+ color: var(--highlight);
+ transition: .5s;
+ -webkit-transform: translate(0px,-20px);
+ -moz-transform: translate(0px,-20px);
+ -ms-transform: translate(0px,-20px);
+ -o-transform: translate(0px,-20px);
+}
+a {
+  position: absolute;
+  left: 30%;
+  top: 90%;
+  transform: translate(-50%,-50%);
+  display: inline-block;
+  margin: 40px;
+  text-decoration: none;
+  font-size: 24px;
+  color: var(--highlight);
+  padding: 0px 0px;
+  overflow: hidden;
+  letter-spacing: 4px;
+  padding: 10px;
+  transition: .5s;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -ms-transition: .5s;
+  -o-transition: .5s;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+}
+span {
+  position: absolute;
+  display: block;
+}
+a span:nth-child(1) {
+  position: absolute;
+  left: -200%;
+  width: 100%;
+  height: 2px;
+  top: 0%;
+  background: linear-gradient(to right, transparent, var(--highlight));
+  animation: linear top1 1s infinite;
+  -webkit-animation: linear top1 1s infinite;
+  animation-delay:170ms ;
+}
+@keyframes top1 {
+  0% {
+    left: -200%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+a span:nth-child(2) {
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  top: -200%;
+  right: 0%;
+  background: linear-gradient(to right, transparent, var(--highlight));
+  animation: linear left1 1s infinite;
+  -webkit-animation: linear left1 1s infinite;
+  animation-delay:445ms;
+}
+@keyframes left1 {
+  0% {
+    top: -200%;
+  }
+  100% {
+    top: 100%;
+  }
+  
+}
+span:nth-child(3) {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  right: -200%;
+  bottom: 0%;
+  background: linear-gradient(to left, transparent, var(--highlight));
+  animation: linear bottom 1s infinite;
+  animation-delay: 750ms;
+}
+@keyframes bottom {
+  0% {
+    right: -200%;
+  }
+  100% {
+    right: 100%;
+  }
+
+}
+a span:nth-child(4) {
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  bottom:-100%;
+  left: 0%;
+  background: linear-gradient(to right, transparent, var(--highlight));
+  animation: linear right 1s infinite;
+  -webkit-animation: linear right 1s infinite;
+  animation-delay:985ms;
+}
+@keyframes right {
+  0% {
+    bottom: -250%;
+  }
+  100% {
+    bottom: 100%;
+  }
+  
+}
+ a:hover {
+  background: var(--highlight);
+  color: var(--text);
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--highlight),
+              0 0 25px var(--highlight),
+               0 0 50px var(--highlight), 
+              0 0 100px var(--highlight);
+             
+position: absolute;}
+input:focus{
+  border: none;
+}

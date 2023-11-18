@@ -1,0 +1,105 @@
+*{
+    scroll-behavior: smooth;
+
+}
+:root {
+  --highlight: #03e9f4;
+  --maincolor: #ff0303;
+  --seccolor: #000000;
+  --thirdcolor: #4e4feb;
+  --forthcolor:#000000bd;
+  --text: #faf6f0;
+}
+body {
+  background-color: var(--seccolor);
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background: var(--seccolor);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--highlight);
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+header{
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  background-color: var(--forthcolor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1; 
+}
+nav{
+  width: 65%;
+  display: flex;
+  justify-content: space-around;
+}
+header a{
+  text-decoration: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+}
+header a:hover{
+  color: var(--highlight);
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+}
+p{
+  color: var(--text);
+  font-size: 32px;
+  border-bottom: 4px solid var(--maincolor);
+  text-transform: capitalize;
+  padding: 20px;
+}
+section > div {
+  background-color: var(--thirdcolor);
+  width: 200px;
+  height: calc(200px * 1.8);
+  transition: 0.3s;
+}
+img {
+  width: 200px;
+  height: calc(200px * 1.8);
+}
+section > div:hover {
+  border: #faf6f0 solid 3px;
+  transition: 0.3s;
+  transform: translate3d(-10px, -10px, 10px);
+  -webkit-transform: translate3d(-10px, -10px, 10px);
+  -moz-transform: translate3d(-10px, -10px, 10px);
+  -ms-transform: translate3d(-10px, -10px, 10px);
+  -o-transform: translate3d(-10px, -10px, 10px);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+section {
+  display: grid;
+    column-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 200px));
+  row-gap: 4px;
+  justify-content: center;
+  background-color: var(--seccolor);
+  margin-bottom: 4px;
+}
+.img{
+  width:100%;
+  height: 170%;
+}

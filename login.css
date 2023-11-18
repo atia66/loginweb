@@ -5,6 +5,10 @@
   --thirdcolor: #4e4feb;
   --text: #faf6f0;
 }
+* {
+  scroll-behavior: smooth;
+    caret-color: var(--highlight);
+}
 ::-webkit-scrollbar {
   width: 10px;
   background: var(--seccolor);
@@ -17,16 +21,13 @@
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
 }
-body{
+body {
   background-color: var(--seccolor);
   height: 1200px;
 }
-*::selection{
+*::selection {
   color: var(--seccolor);
   background-color: var(--highlight);
-}
-*{
-  caret-color: var(--highlight);
 }
 .login-box {
   position: absolute;
@@ -70,38 +71,37 @@ form input:focus {
   border-top: none;
   border-left: none;
   border-right: none;
-    border-bottom:2px solid var(--highlight);
-    width: 100%;
-    color: var(--text);
+  border-bottom: 2px solid var(--highlight);
+  width: 100%;
+  color: var(--text);
 }
-.label{
+.label {
   position: absolute;
-  text-transform:uppercase ;
+  text-transform: uppercase;
   top: -5px;
   left: 0;
   color: var(--text);
-  transition: .5s;
-  -webkit-transition: .5s;
-  -moz-transition: .5s;
-  -ms-transition: .5s;
-  -o-transition: .5s;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 form input:focus + .label,
-form input:valid + .label
-{
- transform: translate(0px,-20px);
- color: var(--highlight);
- transition: .5s;
- -webkit-transform: translate(0px,-20px);
- -moz-transform: translate(0px,-20px);
- -ms-transform: translate(0px,-20px);
- -o-transform: translate(0px,-20px);
+form input:valid + .label {
+  transform: translate(0px, -20px);
+  color: var(--highlight);
+  transition: 0.5s;
+  -webkit-transform: translate(0px, -20px);
+  -moz-transform: translate(0px, -20px);
+  -ms-transform: translate(0px, -20px);
+  -o-transform: translate(0px, -20px);
 }
 a {
   position: absolute;
   left: 30%;
   top: 90%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   display: inline-block;
   margin: 40px;
   text-decoration: none;
@@ -111,15 +111,15 @@ a {
   overflow: hidden;
   letter-spacing: 4px;
   padding: 10px;
-  transition: .5s;
-  -webkit-transition: .5s;
-  -moz-transition: .5s;
-  -ms-transition: .5s;
-  -o-transition: .5s;
-  -webkit-transform: translate(-50%,-50%);
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 span {
   position: absolute;
@@ -134,7 +134,7 @@ a span:nth-child(1) {
   background: linear-gradient(to right, transparent, var(--highlight));
   animation: linear top1 1s infinite;
   -webkit-animation: linear top1 1s infinite;
-  animation-delay:170ms ;
+  animation-delay: 170ms;
 }
 @keyframes top1 {
   0% {
@@ -153,7 +153,7 @@ a span:nth-child(2) {
   background: linear-gradient(to right, transparent, var(--highlight));
   animation: linear left1 1s infinite;
   -webkit-animation: linear left1 1s infinite;
-  animation-delay:445ms;
+  animation-delay: 445ms;
 }
 @keyframes left1 {
   0% {
@@ -162,7 +162,6 @@ a span:nth-child(2) {
   100% {
     top: 100%;
   }
-  
 }
 span:nth-child(3) {
   position: absolute;
@@ -181,18 +180,17 @@ span:nth-child(3) {
   100% {
     right: 100%;
   }
-
 }
 a span:nth-child(4) {
   position: absolute;
   width: 4px;
   height: 100%;
-  bottom:-100%;
+  bottom: -100%;
   left: 0%;
   background: linear-gradient(to right, transparent, var(--highlight));
   animation: linear right 1s infinite;
   -webkit-animation: linear right 1s infinite;
-  animation-delay:985ms;
+  animation-delay: 985ms;
 }
 @keyframes right {
   0% {
@@ -201,18 +199,16 @@ a span:nth-child(4) {
   100% {
     bottom: 100%;
   }
-  
 }
- a:hover {
+a:hover {
   background: var(--highlight);
   color: var(--text);
   border-radius: 5px;
-  box-shadow: 0 0 5px var(--highlight),
-              0 0 25px var(--highlight),
-               0 0 50px var(--highlight), 
-              0 0 100px var(--highlight);
-             
-position: absolute;}
-input:focus{
+  box-shadow: 0 0 5px var(--highlight), 0 0 25px var(--highlight),
+    0 0 50px var(--highlight), 0 0 100px var(--highlight);
+
+  position: absolute;
+}
+input:focus {
   border: none;
 }

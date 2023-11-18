@@ -1,13 +1,17 @@
-*{
-    scroll-behavior: smooth;
-
+* {
+  scroll-behavior: smooth;
+  caret-color: var(--highlight);
+}
+*::selection {
+  color: var(--seccolor);
+  background-color: var(--highlight);
 }
 :root {
   --highlight: #03e9f4;
   --maincolor: #ff0303;
   --seccolor: #000000;
   --thirdcolor: #4e4feb;
-  --forthcolor:#000000bd;
+  --forthcolor: #000000bd;
   --text: #faf6f0;
 }
 body {
@@ -25,7 +29,7 @@ body {
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
 }
-header{
+header {
   position: fixed;
   width: 100%;
   height: 100px;
@@ -34,33 +38,40 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1; 
+  z-index: 1;
 }
-nav{
-  width: 65%;
+nav {
+  width: 50%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
-header a{
+header > div {
+  width: 35%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header a {
   text-decoration: none;
   font-size: 20px;
   text-transform: uppercase;
   color: var(--text);
-  transition: .3s;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -ms-transition: .3s;
-  -o-transition: .3s;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
-header a:hover{
+header a:hover {
   color: var(--highlight);
-  transition: .3s;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -ms-transition: .3s;
-  -o-transition: .3s;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
-p{
+p {
   color: var(--text);
   font-size: 32px;
   border-bottom: 4px solid var(--maincolor);
@@ -92,14 +103,144 @@ section > div:hover {
 }
 section {
   display: grid;
-    column-gap: 20px;
+  column-gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(140px, 200px));
   row-gap: 4px;
   justify-content: center;
   background-color: var(--seccolor);
   margin-bottom: 4px;
 }
-.img{
-  width:100%;
+.img {
+  width: 100%;
   height: 170%;
+}
+header > div a {
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+}
+header div > a:nth-child(1):hover {
+  background: var(--thirdcolor);
+  color: var(--text);
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--thirdcolor), 0 0 25px var(--thirdcolor),
+    0 0 50px var(--highlight), 0 0 75px var(--thirdcolor);
+}
+header div > a:nth-child(2):hover {
+  background: var(--maincolor);
+  color: var(--text);
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--maincolor), 0 0 25px var(--maincolor),
+    0 0 50px var(--highlight), 0 0 75px var(--maincolor);
+}
+div > a > span:nth-child(1) {
+  position: absolute;
+  left: -200%;
+  width: 100%;
+  height: 2px;
+  top: 0%;
+  animation: linear top1 1s infinite;
+  -webkit-animation: linear top1 1s infinite;
+  animation-delay: 120ms;
+  animation-play-state: running;
+}
+div a:nth-child(1) span:nth-child(n) {
+  background: linear-gradient(to right, transparent, var(--thirdcolor));
+}
+div a:nth-child(2) span:nth-child(n) {
+  background: linear-gradient(to right, transparent, var(--maincolor));
+}
+@keyframes top1 {
+  0% {
+    left: -200%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+div > a > span:nth-child(2) {
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  top: -200%;
+  right: 0%;
+  animation: linear left1 1s infinite;
+  -webkit-animation: linear left1 1s infinite;
+  animation-delay: 400ms;
+  animation-play-state: running;
+}
+@keyframes left1 {
+  0% {
+    top: -200%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+div > a > span:nth-child(3) {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  right: -200%;
+  bottom: 0%;
+  animation: linear bottom 1s infinite;
+  animation-delay: 750ms;
+  animation-play-state: running;
+}
+@keyframes bottom {
+  0% {
+    right: -200%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+div > a > span:nth-child(4) {
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  bottom: -100%;
+  left: 0%;
+  animation: linear right 1s infinite;
+  -webkit-animation: linear right 1s infinite;
+  animation-delay: 985ms;
+  animation-play-state: running;
+}
+@keyframes right {
+  0% {
+    bottom: -250%;
+  }
+  100% {
+    bottom: 100%;
+  }
+}
+@media (max-width: 991px) {
+  nav a {
+    display: none;
+  }
+  nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav ::after {
+    content: "\1F595";
+    display: flex;
+    transform: scale(3.5) translate(1px,-1px);
+    cursor: pointer;
+    -webkit-transform: scale(3.5) translate(1px,-1px);
+    -moz-transform: scale(3.5) translate(1px,-1px);
+    -ms-transform: scale(3.5) translate(1px,-1px);
+    -o-transform: scale(3.5) translate(1px,-1px);
+}
+  header > div a,
+  header > div a:hover {
+    padding: 5px;
+    margin: 0%;
+  }
+  header > div {
+    margin: 10px;
+  }
 }
